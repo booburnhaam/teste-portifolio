@@ -8,6 +8,9 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    position: relative;
 }
 
 /* Header centralizado */
@@ -56,77 +59,18 @@ footer {
     background-color: #333;
 }
 
-/* Teste da caixa pra envio de texto */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-body {
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: #f4f4f9;
-    position: relative;
-}
-
-
-.email-card {
-    background: #ffffff;
-    padding: 30px;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-.email-card h2 {
-    margin-bottom: 20px;
-    color: #333333;
-    font-size: 24px;
-    position: relative;
-}
-
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-
-label {
-    font-size: 14px;
-    color: #555555;
-}
-
-
-input, textarea {
+button {
     padding: 12px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 14px;
-    outline: none;
-}
-
-
-input:focus, textarea:focus {
-    border-color: #007bff;
-}
-
-.action-btn {
-    padding: 10px 20px;
     background-color: rgb(191, 0, 255);
-    color: #fff;
+    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.action-btn:hover {
+button:hover {
     background-color: rgba(191, 0, 255, 0.573);
 }
 
@@ -158,7 +102,10 @@ header h1::before {
     transition: transform 0.2s ease-in-out;
 }
 
+/* RESPONSIVIDADE DO SITE */
+
 @media (max-width: 600px) {
+
     /* Header */
     header {
         padding: 15px;
@@ -179,5 +126,73 @@ header h1::before {
     /* Painel de informações em uma coluna */
     .info-panel {
         grid-template-columns: 1fr;
+    }
+}
+
+/* CAIXA PARA ENVIO DE TEXTO */
+
+.email-card {
+    background: #ffffff;
+    /* Espaçamento interno */
+    padding: 30px;
+    /* Ocupa toda a largura disponível */
+    width: 100%;
+    /* Não fica limitada a 400px */
+    max-width: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Espaço entre o conteúdo anterior e a caixa */
+    margin: 40px auto;
+}
+
+.email-card h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 24px;
+    position: relative;
+}
+
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #555555;
+}
+
+input,
+textarea {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+
+    /* Campos ocupam toda a largura da caixa */
+    width: 100%;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #007bff;
+}
+
+/* RESPONSIVIDADE DO FORMULÁRIO */
+
+@media (max-width: 600px) {
+
+    .email-card {
+        padding: 20px;
+        margin: 30px auto;
+        border-radius: 6px;
+    }
+
+    .email-card h2 {
+        font-size: 20px;
     }
 }

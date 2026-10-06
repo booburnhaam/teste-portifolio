@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil do Usuário</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -33,8 +33,24 @@
         </div>
     </section>
 
-    <footer>
-        <button class="action-btn">Enviar Mensagem</button>
-    </footer>
+    <div class="email-card">
+        <h2>Entre em contato</h2>
+        <form action="send_email.php" method="post">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+   
+            <label for="email">Endereço de Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+   
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+   
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+
 </body>
 </html>
